@@ -1,3 +1,10 @@
+/**
+ * index.css
+ * Estilos globales de la aplicación.
+ * Los estilos específicos de cada componente
+ * viven en su propio archivo (NavBar.css, MovieCard.css).
+ */
+
 :root {
     --bg: #f4ecdd;
     --surface: #fffaf0;
@@ -81,6 +88,7 @@ form button:hover {
     gap: 20px;
 }
 
+/* Mensaje de Favorites cuando no hay ninguna película guardada. */
 .favorites-empty {
     margin-top: 40px;
     text-align: center;

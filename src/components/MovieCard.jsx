@@ -1,3 +1,9 @@
+/**
+ * MovieCard.jsx
+ * Tarjeta individual de una película: póster, título, año y un botón de
+ * favorito que aparece en un overlay al pasar el ratón.
+ */
+
 import "./MovieCard.css";
 import { useMovieContext } from "../contexts/MovieContext";
 

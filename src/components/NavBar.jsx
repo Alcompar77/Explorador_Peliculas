@@ -1,3 +1,9 @@
+/**
+ * NavBar.jsx
+ * Barra de navegación superior. Muestra el título de la app y los enlaces para
+ * moverse entre Home ("/") y Favorites ("/favorites").
+ */
+
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 
