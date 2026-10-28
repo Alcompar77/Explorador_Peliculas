@@ -1,21 +1,24 @@
 :root {
-    --cine-black: #0d0809;
-    --cine-red: #b11226;
-    --cine-red-dark: #7a0a15;
-    --cine-gold: #d4af37;
-    --cine-dark: #1a1112;
-    --cine-text: #f5ecd7;
+    --bg: #f4ecdd;
+    --surface: #fffaf0;
+    --border: #ddd0b8;
+    --text: #2b2118;
+    --text-muted: #6f6253;
+    --accent: #8c1c2b;
+    --accent-dark: #6e1421;
+    --nav-bg: #2b2118;
+    --nav-text: #f4ecdd;
 }
 
 body {
     margin: 0;
-    background-color: var(--cine-black);
-    color: var(--cine-text);
+    background-color: var(--bg);
+    color: var(--text);
     font-family: system-ui, sans-serif;
 }
 
 h1 {
-    color: var(--cine-gold);
+    color: var(--accent);
 }
 
 /* Contenido de las páginas: deja sitio a la barra fija y centra */
@@ -36,35 +39,39 @@ form {
 input {
     flex: 1;
     padding: 10px 14px;
-    background-color: var(--cine-dark);
-    color: var(--cine-text);
-    border: 1px solid var(--cine-gold);
+    background-color: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
     border-radius: 6px;
     font-size: 1rem;
 }
 
+input::placeholder {
+    color: var(--text-muted);
+}
+
 input:focus {
-    outline: 2px solid var(--cine-red);
+    outline: 2px solid var(--accent);
+    border-color: transparent;
 }
 
 form button {
     padding: 10px 20px;
-    background-color: var(--cine-red);
-    color: var(--cine-text);
+    background-color: var(--accent);
+    color: var(--nav-text);
     border: none;
     border-radius: 6px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.2s;
 }
 
 form button:hover {
-    background-color: var(--cine-gold);
-    color: var(--cine-red-dark);
+    background-color: var(--accent-dark);
 }
 
 .error-message {
-    color: #ff6b6b;
+    color: #b3261e;
 }
 
 /* Cuadrícula de películas */
@@ -77,7 +84,7 @@ form button:hover {
 .favorites-empty {
     margin-top: 40px;
     text-align: center;
-    color: var(--cine-gold);
+    color: var(--text-muted);
 }
 
 @media (max-width: 600px) {
