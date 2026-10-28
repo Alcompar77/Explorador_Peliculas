@@ -1,10 +1,4 @@
 .movie-card {
-    --cine-red: #b11226;
-    --cine-red-dark: #7a0a15;
-    --cine-gold: #d4af37;
-    --cine-dark: #1a1112;
-    --cine-text: #f5ecd7;
-
     background-color: var(--cine-dark);
     border: 1px solid var(--cine-gold);
     border-radius: 8px;
@@ -17,7 +11,6 @@
     box-shadow: 0 6px 16px rgba(177, 18, 38, 0.5);
 }
 
-/* Póster */
 .movie-poster {
     position: relative;
 }
@@ -102,4 +95,20 @@
         background-color: transparent;
         opacity: 1;
     }
+}
+
+.movie-overlay.is-favorite {
+    opacity: 1;
+    background-color: transparent;
+}
+
+
+.movie-poster:hover .movie-overlay.is-favorite {
+    background-color: rgba(122, 10, 21, 0.65);
+}
+
+
+.favorite-btn.active {
+    background-color: var(--cine-gold);
+    color: var(--cine-red);
 }

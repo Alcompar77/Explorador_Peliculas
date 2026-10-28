@@ -1,11 +1,24 @@
 import "./MovieCard.css";
+import { useMovieContext } from "../contexts/MovieContext";
 
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";
 
 function MovieCard({ movie }) {
+    const { isFavorite, addToFavorites, removeFromFavorites } = useMovieContext();
+
+    const favorite = isFavorite(movie.id);
+
     const releaseYear = movie.release_date
         ? movie.release_date.split("-")[0]
         : "Año desconocido";
+
+    const handleFavoriteClick = () => {
+        if (favorite) {
+            removeFromFavorites(movie.id);
+        } else {
+            addToFavorites(movie);
+        }
+    };
 
     return (
         <div className="movie-card">
@@ -19,9 +32,13 @@ function MovieCard({ movie }) {
                     <div className="no-poster">Sin póster</div>
                 )}
 
-                <div className="movie-overlay">
-                    <button className="favorite-btn" aria-label="Añadir a favoritos">
-                        ♡
+                <div className={`movie-overlay ${favorite ? "is-favorite" : ""}`}>
+                    <button
+                        className={`favorite-btn ${favorite ? "active" : ""}`}
+                        onClick={handleFavoriteClick}
+                        aria-label={favorite ? "Quitar de favoritos" : "Añadir a favoritos"}
+                    >
+                        {favorite ? "♥" : "♡"}
                     </button>
                 </div>
             </div>
@@ -35,5 +52,3 @@ function MovieCard({ movie }) {
 }
 
 export default MovieCard;
-
-

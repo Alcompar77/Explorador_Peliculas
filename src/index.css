@@ -1,7 +1,16 @@
+:root {
+    --cine-black: #0d0809;
+    --cine-red: #b11226;
+    --cine-red-dark: #7a0a15;
+    --cine-gold: #d4af37;
+    --cine-dark: #1a1112;
+    --cine-text: #f5ecd7;
+}
+
 body {
     margin: 0;
-    background-color: #0d0809;
-    color: #f5ecd7;
+    background-color: var(--cine-black);
+    color: var(--cine-text);
     font-family: system-ui, sans-serif;
 }
 
@@ -9,4 +18,10 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
+}
+
+.favorites-empty {
+    margin-top: 40px;
+    text-align: center;
+    color: var(--cine-gold);
 }
