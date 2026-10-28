@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    background-color: #0d0809;
+    color: #f5ecd7;
+    font-family: system-ui, sans-serif;
+}
+
+.movies-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}

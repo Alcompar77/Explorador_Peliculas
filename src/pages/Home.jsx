@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { getPopularMovies, searchMovies } from "../services/api";
+import MovieCard from "../components/MovieCard";
 
 function Home() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -72,7 +73,7 @@ function Home() {
                 {!loading && !error && movies.length > 0 && (
                     <div className="movies-list">
                         {movies.map((movie) => (
-                            <p key={movie.id}>{movie.title}</p>
+                            <MovieCard key={movie.id} movie={movie} />
                         ))}
                     </div>
                 )}
